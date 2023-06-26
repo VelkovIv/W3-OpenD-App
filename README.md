@@ -5,6 +5,29 @@ Welcome to my new opend project and to the internet computer development communi
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
 ## ScreenShots
+Home page
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/72e67379-90a2-44f7-b543-15d7934aa9d3)
+
+Discover page
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/a29696f1-7232-49af-90d4-8d83aa11cd06)
+
+Minter page
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/498e1485-4b7f-49c5-b796-de429e417e21)
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/20dc7493-c44b-4d00-a34a-5010bab95dce)
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/9d09289f-21dc-4b29-a714-43e1b238ee92)
+
+My NFTs Page
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/3bce5f8b-d06c-4388-ad2f-f735036ae20d)
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/80f98a8b-0b3f-4502-993b-9c20b62636d8)
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/c3aaa259-2b53-4e22-a582-649874914584)
+
+
+
+
+
+
+
+
 
 
 
