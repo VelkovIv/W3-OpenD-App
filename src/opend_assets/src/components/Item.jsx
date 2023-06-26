@@ -5,6 +5,8 @@ import { idlFactory } from "../../../declarations/nft";
 import { Principal } from "@dfinity/principal";
 import { opend } from "../../../declarations/opend";
 import Button from "./Button";
+import CURRENT_USER_ID from "../index";
+import PriceLabel from "./PriceLabel";
 
 
 function Item(props) {
@@ -17,6 +19,7 @@ function Item(props) {
   const [loaderHidden, setLoaderHidden] = useState(true);
   const [blur, setBlur] = useState();
   const [sellStatus, setSellStatus] = useState();
+  const [priceLabel, setPriceLabel] = useState();
 
   const id = props.id;
 
@@ -44,16 +47,24 @@ function Item(props) {
     setOwner(owner.toText());
     setImage(image);
     
-    const nftListed = await opend.isListed(props.id);
+    if (props.role == "collection") {
+      const nftListed = await opend.isListed(props.id);
 
-    if (nftListed) {
-      setOwner("OpenD");
-      setBlur({filter: "blur(4px)"});
-      setSellStatus("Listed");
-    } else {
-      setButton(<Button handleClick={handleSell} text={"Sell"} />);
-    }
-    // setButton(<Button handleClick={handleSell} text={"Sell"} />);
+      if (nftListed) {
+        setOwner("OpenD");
+        setBlur({filter: "blur(4px)"});
+        setSellStatus("Listed");
+      } else {
+        setButton(<Button handleClick={handleSell} text={"Sell"} />);
+      }
+    } else if (props.role == "discover") {
+      const originalOwner = await opend.getOriginalOwner(props.id);
+      if (originalOwner.toText != CURRENT_USER_ID.toText) {
+        setButton(<Button handleClick={handleBuy} text={"Buy"} />);
+      };
+      const price = await opend.getListedNFTPrice(props.id);
+      setPriceLabel(<PriceLabel sellPrice={price.toString()} />)
+    };
   };
 
   useEffect(() => {
@@ -85,7 +96,7 @@ function Item(props) {
     console.log("listing result: " + listingResult);
     if (listingResult == "Success"){
       const openDId = await opend.getOpenDCAnisterId();
-      const transferResult = await NFTActor.transerOwnership(openDId);
+      const transferResult = await NFTActor.transferOwnership(openDId);
       console.log("Trafer: " + transferResult);
       if (transferResult == "Success"){
         setLoaderHidden(true);
@@ -96,6 +107,10 @@ function Item(props) {
       };
     }
   };
+
+  async function handleBuy() {
+    console.log("Handle buy");
+  }
 
   return (
     <div className="disGrid-item">
@@ -112,6 +127,7 @@ function Item(props) {
           <div></div>
         </div>
         <div className="disCardContent-root">
+          {priceLabel}
           <h2 className="disTypography-root makeStyles-bodyText-24 disTypography-h5 disTypography-gutterBottom">
             {name}<span className="purple-text"> {sellStatus}</span>
           </h2>

@@ -27,7 +27,7 @@ actor class NFT (name: Text, owner: Principal, content: [Nat8]) = this {
         return Principal.fromActor(this);
     };
 
-    public shared(msg) func transerOwnership(newOwner: Principal) : async Text {
+    public shared(msg) func transferOwnership(newOwner: Principal) : async Text {
         if (msg.caller == nftOwner) {
             nftOwner := newOwner;
             return "Success";
