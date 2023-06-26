@@ -24,15 +24,6 @@ My NFTs Page
 Discover Page after sell NFT 
 ![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/007d9a3b-53f5-4a51-acde-5b0660d701ad)
 
-
-
-
-
-
-
-
-
-
 ## To Install and Run the Project
 
 1. start local dfx
