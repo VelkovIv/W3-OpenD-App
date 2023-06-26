@@ -21,6 +21,8 @@ My NFTs Page
 ![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/80f98a8b-0b3f-4502-993b-9c20b62636d8)
 ![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/c3aaa259-2b53-4e22-a582-649874914584)
 
+Discover Page after sell NFT 
+![image](https://github.com/VelkovIv/W3-OpenD-App/assets/114020789/007d9a3b-53f5-4a51-acde-5b0660d701ad)
 
 
 
